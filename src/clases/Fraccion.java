@@ -12,21 +12,47 @@ public class Fraccion {
 		this.numerador = numerador;
 		this.denominador = denominador;
 	}
-/*
- * 	Añadir las siguientes operaciones a Fracción
- * 
- * 
- * 
+
 	public static Fraccion simplifica(Fraccion entrada) {
+
+		return entrada;
 	}
-	
+
+
 	public static Fraccion suma(Fraccion sumando1, Fraccion sumando2) {
+
+		int denominadorComun = sumando1.getDenominador() * sumando2.getDenominador();
+
+		int num1 = sumando1.getNumerador() * sumando2.getDenominador();
+		int num2 = sumando2.getNumerador() * sumando1.getDenominador();
+
+		Fraccion suma = new Fraccion(num1+num2,denominadorComun);
+
+		return simplifica(suma);
+
+
 	}
 	public static Fraccion multiplicacion(Fraccion sumando1, Fraccion sumando2) {
+
+		int numerador = sumando1.getNumerador() * sumando2.getNumerador();
+		int denominador = sumando1.getDenominador()* sumando2.getDenominador();
+
+		Fraccion resultado = new Fraccion(numerador,denominador);
+
+		return simplifica(resultado);
+
 	}
 	public static Fraccion division(Fraccion sumando1, Fraccion sumando2) {
+
+		int numerador = sumando1.getNumerador() * sumando2.getDenominador();
+		int denominador = sumando1.getDenominador()* sumando2.getNumerador();
+
+		Fraccion resultado = new Fraccion(numerador,denominador);
+
+		return simplifica(resultado);
+
 	}
-*/
+
 	public int getNumerador() {
 		return numerador;
 	}
@@ -46,9 +72,7 @@ public class Fraccion {
 
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append(numerador).append(" / ").append(denominador);
-		return sb.toString();
+		return numerador + " / " + denominador;
 	}
 
 }
