@@ -12,14 +12,38 @@ public class Fraccion {
 		this.numerador = numerador;
 		this.denominador = denominador;
 	}
-/*
- * 	Añadir las siguientes operaciones a Fracción
- * 
- * 
- * 
+
 	public static Fraccion simplifica(Fraccion entrada) {
+
+		int numerador = Math.abs(entrada.getNumerador());
+		int denominador = Math.abs(entrada.getDenominador());
+
+		int metodo = entrada.mcd();
+
+		numerador/=metodo;
+		denominador/=metodo;
+
+		return new Fraccion(numerador,denominador);
+
 	}
-	
+
+	public int mcd(){ //MAXIMO COMUN DIVISOR
+
+		int n=Math.abs(this.getNumerador());
+		int d=Math.abs(this.getDenominador());
+		if(d==0){
+			return n;
+		}
+		int r;
+		while(d!=0){
+			r=n%d;
+			n=d;
+			d=r;
+		}
+		return n;
+	}
+
+	/*
 	public static Fraccion suma(Fraccion sumando1, Fraccion sumando2) {
 	}
 	public static Fraccion multiplicacion(Fraccion sumando1, Fraccion sumando2) {
@@ -46,9 +70,7 @@ public class Fraccion {
 
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append(numerador).append(" / ").append(denominador);
-		return sb.toString();
+		return denominador + " / " + numerador;
 	}
 
 }
