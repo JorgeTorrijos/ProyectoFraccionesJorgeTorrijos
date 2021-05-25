@@ -43,14 +43,41 @@ public class Fraccion {
 		return n;
 	}
 
-	/*
+
 	public static Fraccion suma(Fraccion sumando1, Fraccion sumando2) {
+
+		int denominadorComun = sumando1.getDenominador() * sumando2.getDenominador();
+
+		int num1 = sumando1.getNumerador() * sumando2.getDenominador();
+		int num2 = sumando2.getNumerador() * sumando1.getDenominador();
+
+		Fraccion suma = new Fraccion(num1+num2,denominadorComun);
+
+		return simplifica(suma);
+
+
 	}
 	public static Fraccion multiplicacion(Fraccion sumando1, Fraccion sumando2) {
+
+		int numerador = sumando1.getNumerador() * sumando2.getNumerador();
+		int denominador = sumando1.getDenominador()* sumando2.getDenominador();
+
+		Fraccion resultado = new Fraccion(numerador,denominador);
+
+		return simplifica(resultado);
+
 	}
 	public static Fraccion division(Fraccion sumando1, Fraccion sumando2) {
+
+		int numerador = sumando1.getNumerador() * sumando2.getDenominador();
+		int denominador = sumando1.getDenominador()* sumando2.getNumerador();
+
+		Fraccion resultado = new Fraccion(numerador,denominador);
+
+		return simplifica(resultado);
+
 	}
-*/
+
 	public int getNumerador() {
 		return numerador;
 	}
